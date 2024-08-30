@@ -1,29 +1,26 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { SucuForm } from './sucuForm'
+import { getSucu } from '../sucus.api'
 
-function NewSucusPage() {
+type Props = {
+    params: {
+        id: number
+    }
+}
+
+async function NewSucusPage({params}:Props) {
+    const sucu = await getSucu(params.id)
   return (
     <div className='h-screen flex justify-center items-center'>
         <Card>
             <CardHeader>
                 <CardTitle>
-                    Register sucu
+                   {params.id ? "Edit sucu" : "Register sucu"}
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <form>
-                    <Label>Sucu name</Label>
-                    <Input/>
-                    <Label>Sucu description</Label>
-                    <Input/>
-                    <Label>Sucu name</Label>
-                    <Input />
-
-                    <Button>Register sucu</Button>
-                </form>
+                <SucuForm sucu={sucu} />
             </CardContent>
         </Card>
     </div>
