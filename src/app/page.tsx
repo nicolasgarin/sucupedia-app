@@ -9,10 +9,10 @@ async function HomePage() {
   const sucus = await getSucus();
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between mb-10">
         <h1 className="text-4xl font-bold">Sucupedia</h1>
         <Link href="/sucus/new" className={buttonVariants()}>
-          Create product
+          Registrar sucu
         </Link>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

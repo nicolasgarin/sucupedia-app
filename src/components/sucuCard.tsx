@@ -13,15 +13,15 @@ export function SucuCard({ sucu }: any) {
   }
 
   return (
-    <Card onClick={() => router.push(`/sucus/${sucu.id}`)}>
+    <Card className="bg-violet-900 border-violet-950">
       <div
-        className="w-full h-48 bg-slate-200 bg-cover bg-center"
+        className="w-full h-48 bg-slate-200 bg-cover bg-center rounded-t-lg"
         style={{ backgroundImage: `url(${sucu.image})` }}
       ></div>
-      <CardContent>
-        <CardTitle>{sucu.name}</CardTitle>
-        <CardFooter className="flex justify-between">
-          <Button variant="default">Ver</Button>
+      <CardContent className="p-6">
+        <CardTitle className="text-violet-300">{sucu.name}</CardTitle>
+        <CardFooter className="flex justify-between p-0">
+          <Button onClick={() => router.push(`/sucus/${sucu.id}`)} variant="default">Ver</Button>
           <Button
             onClick={(e) => {
               e.stopPropagation();
@@ -29,7 +29,7 @@ export function SucuCard({ sucu }: any) {
             }}
             variant="destructive"
           >
-            Delete
+            x
           </Button>
         </CardFooter>
       </CardContent>

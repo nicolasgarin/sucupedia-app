@@ -1,4 +1,5 @@
-const BACKEND_URL = process.env.BACKEND_URL;
+//const BACKEND_URL = process.env.BACKEND_URL;
+const BACKEND_URL = "http://localhost:4000";
 
 export async function getSucus() {
   const data = await fetch(`${BACKEND_URL}/api/sucus`, {
