@@ -22,11 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased bg-violet-500",
+          "h-100 bg-background font-sans antialiased bg-violet-500",
           fontSans.variable
         )}
       >
-        <main className="container mx-auto pt-5">
+        <main className="mx-auto">
           {children}
         </main>
       </body>

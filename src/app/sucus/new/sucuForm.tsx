@@ -28,6 +28,7 @@ export function SucuForm({ sucu }: any) {
   });
 
   return (
+    <div className="flex">
     <form onSubmit={onSubmit}>
       <Label>Sucu name</Label>
       <Input {...register("name")} />
@@ -37,5 +38,7 @@ export function SucuForm({ sucu }: any) {
       <Input {...register("image")} />
       <Button>{params.id ? "Editar sucu" : "Registar sucu"}</Button>
     </form>
+    <div className="w-[200px]" style={{ backgroundImage: `url("${sucu?.image}")`}}></div>
+    </div>
   );
 }
